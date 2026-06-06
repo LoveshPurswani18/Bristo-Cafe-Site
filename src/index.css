@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-1: #65451F;
+  --color-primary-2: #765827;
+  --color-secondary-1: #D5C09A;
+  --color-secondary-2: #F5E2CC;
+  --color-white-cream: #F9F6F1;
+  --color-black-warm: #1E1C1B;
+
+  --color-black-100: #1E1C1B;
+  --color-black-75: rgba(30, 28, 27, 0.75);
+  --color-black-50: rgba(30, 28, 27, 0.50);
+  --color-black-25: rgba(30, 28, 27, 0.25);
+  --color-black-10: rgba(30, 28, 27, 0.10);
+  --color-black-5: rgba(30, 28, 27, 0.05);
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Open Sans', sans-serif;
+  --font-accent: 'Pacifico', cursive;
+}
+
+/* Base styles and scrollbar customization */
+@utility text-h1 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 105px;
+  @media (max-width: 1024px) {
+    font-size: 92px;
+  }
+  @media (max-width: 640px) {
+    font-size: 56px;
+  }
+}
+
+@utility text-h2 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 84px;
+  @media (max-width: 1024px) {
+    font-size: 72px;
+  }
+  @media (max-width: 640px) {
+    font-size: 48px;
+  }
+}
+
+@utility text-h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 67px;
+  @media (max-width: 1024px) {
+    font-size: 58px;
+  }
+  @media (max-width: 640px) {
+    font-size: 36px;
+  }
+}
+
+@utility text-h4 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 53px;
+  @media (max-width: 1024px) {
+    font-size: 45px;
+  }
+  @media (max-width: 640px) {
+    font-size: 28px;
+  }
+}
+
+@utility text-h5 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 43px;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+  }
+  @media (max-width: 640px) {
+    font-size: 24px;
+  }
+}
+
+@utility text-h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 34px;
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
+  @media (max-width: 640px) {
+    font-size: 20px;
+  }
+}
+
+@utility text-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 32px;
+  @media (max-width: 1024px) {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+@utility text-body-bold {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 32px;
+  @media (max-width: 1024px) {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+@utility text-accent {
+  font-family: var(--font-accent);
+  font-size: 64px;
+  line-height: 32px;
+  @media (max-width: 1024px) {
+    font-size: 48px;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #F9F6F1; /* white-cream */
+  color: #1E1C1B; /* black-100 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom Selection style */
+::selection {
+  background-color: #65451F;
+  color: #F9F6F1;
+}
