@@ -36,6 +36,14 @@
 * **Home Page Story**:
   * Title: `Welcome to Bristo Café`
   * Description: `Indulge in artisanal coffee and delightful pastries in our cozy space. Join us for moments to cherish and conversations to remember.`
+* **Home Page Gallery / Carousel**:
+  * Tagline: `Experience Bristo Café`
+  * Subtext: `Take a visual journey through our warm, welcoming spaces and view our masterfully prepared menu items.`
+  * Slides:
+    1. Storefront (Charming Exterior): `Step into our welcoming shop situated in the historic street neighborhood.`
+    2. Ambiance (Cozy Gatherings): `Comfortable seating, warm lighting, and a relaxing vibe for work or casual chats.`
+    3. Artisanal (Morning Delights): `Our hand-selected breakfast plates made from fresh organic local produce.`
+    4. Gourmet (Perfect Pairings): `Savory options designed to pair beautifully with our house espresso roast.`
 * **About Us / Origins**:
   * [TODO: About copy from Figma screenshots]
 

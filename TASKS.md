@@ -9,9 +9,10 @@
 * ✅ Main Navbar and Footer shell design
 * ✅ Main Navbar design alignment to match Figma design
 * ✅ Home page Hero Section implementation
+* ✅ Home page Gallery Section (Image Carousel) implementation
 
 ## Up Next
-* [ ] Home page sections (About, Menu, Gallery, Contact) implementation
+* [ ] Home page sections (About, Menu, Contact) implementation
 
 ## Known Issues
 * None
@@ -20,6 +21,6 @@
 * [x] Hero Section
 * [ ] Menu Section
 * [ ] About Section
-* [ ] Gallery Section
+* [x] Gallery Section
 * [ ] Contact Section
 * [ ] Footer
