@@ -11,8 +11,6 @@ Bristo Cafe is a modern digital home for a luxury cafe, built to showcase the ca
 - **Tailwind v4**: Utilizes the latest Tailwind CSS version, with custom theme values configured in `src/index.css`.
 - **Custom Assets**: SVGs, high-quality images, and custom styling for buttons, cards, and sections.
 
-## Getting Started
-
 ### Prerequisites
 - Node.js (v18+)
 - npm
