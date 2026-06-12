@@ -442,6 +442,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Newsletter Section ─────────────────────────────────── */}
+      <section className="bg-primary-2 py-[clamp(6rem,10vw,8rem)] px-6 lg:px-12 flex justify-center">
+        <div className="max-w-[1440px] mx-auto w-full flex flex-col items-start lg:px-12">
+          {/* Heading */}
+          <h2 className="text-h1 text-white-cream mb-4 leading-tight">
+            Newsletter
+          </h2>
+
+          {/* Description */}
+          <p className="text-body text-white-cream/90 max-w-2xl mb-8 leading-relaxed">
+            Sign-up for our newsletter to receive the latest news, promotions, and updates from Bristo Cafe directly in your inbox.
+          </p>
+
+          {/* Form Area */}
+          <form className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto" onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="bg-secondary-2 text-primary-1 px-6 py-4 rounded-xl w-full sm:w-[400px] outline-none placeholder:text-primary-1/60 focus:ring-2 focus:ring-white-cream/50 transition-all"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-secondary-1 hover:bg-[#c4ad84] text-primary-1 font-bold text-body px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
   );
 }
