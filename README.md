@@ -1,16 +1,41 @@
-# React + Vite
+# Bristo Cafe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, responsive, three-page luxury cafe website built with React, Vite, and Tailwind CSS v4.
 
-Currently, two official plugins are available:
+## Overview
+Bristo Cafe is a modern digital home for a luxury cafe, built to showcase the cafe's story, menu, and ambiance. The project is styled using Tailwind CSS and strictly adheres to a premium design system with custom fluid typography, responsive flex/grid layouts, and elegant aesthetics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- **Responsive Design**: Pixel-perfect matching of the design, scaling gracefully from mobile (375px) to ultra-wide desktop displays using fluid typography and container sizing.
+- **Modern Stack**: Built with React and Vite for blazing-fast development and optimized production builds.
+- **Tailwind v4**: Utilizes the latest Tailwind CSS version, with custom theme values configured in `src/index.css`.
+- **Custom Assets**: SVGs, high-quality images, and custom styling for buttons, cards, and sections.
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js (v18+)
+- npm
 
-## Expanding the ESLint configuration
+### Installation
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. Run `npm run dev` to start the local development server
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Building for Production
+Run `npm run build` to create a production-ready bundle in the `dist` directory.
+
+## Pages
+- **Home**: Hero section, Image Carousel Gallery, USP (Why Choose Us), Reviews, and Newsletter CTA.
+- **Menu** (WIP): Interactive categorized menu for coffee, tea, and pastries.
+- **Contact** (WIP): Location, hours, and booking forms.
+
+## Design System
+The site uses a strict design system defined in `UI_GUIDELINES.md`. Core colors:
+- **Primary 1 (Brown)**: `#65451F`
+- **Secondary 1 (Gold)**: `#D5C09A`
+- **Background**: `#F9F6F1`
+- **Typography**: Playfair Display (Headings), Open Sans (Body), Pacifico (Accents)
+
+---
+*Created as part of the Bristo Cafe website project.*

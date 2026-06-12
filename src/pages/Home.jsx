@@ -457,16 +457,16 @@ export default function Home() {
           </p>
 
           {/* Form Area */}
-          <form className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col sm:flex-row gap-4 w-full max-w-xl" onSubmit={(e) => e.preventDefault()}>
             <input
               type="email"
               placeholder="Enter your email"
-              className="bg-secondary-2 text-primary-1 px-6 py-4 rounded-xl w-full sm:w-[400px] outline-none placeholder:text-primary-1/60 focus:ring-2 focus:ring-white-cream/50 transition-all"
+              className="bg-secondary-2 text-primary-1 px-6 py-4 rounded-xl flex-1 outline-none placeholder:text-primary-1/60 focus:ring-2 focus:ring-white-cream/50 transition-all min-w-0"
               required
             />
             <button
               type="submit"
-              className="bg-secondary-1 hover:bg-[#c4ad84] text-primary-1 font-bold text-body px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer whitespace-nowrap"
+              className="bg-secondary-1 hover:bg-[#c4ad84] text-primary-1 font-bold text-body px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer whitespace-nowrap shrink-0"
             >
               Subscribe
             </button>

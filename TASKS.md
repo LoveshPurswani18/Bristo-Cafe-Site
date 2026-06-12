@@ -6,24 +6,26 @@
 ## Completed
 * ✅ Project Setup and Boilerplate Initialization
 * ✅ Tailwind CSS v4 and Google Fonts config
-* ✅ Main Navbar and Footer shell design
 * ✅ Main Navbar design alignment to match Figma design
 * ✅ Home page Hero Section implementation
 * ✅ Home page Gallery Section (Image Carousel) implementation
 * ✅ Home page USP Section (Why Choose Us) implementation
+* ✅ Home page Reviews Section implementation
+* ✅ Home page Newsletter/CTA Section implementation
+* ✅ Footer Section complete (Responsive fixes, exact SVG icons)
 
 ## Up Next
-* [ ] Home page sections (Reviews, About, Contact) implementation
+* [ ] Create inner pages: Menu Page, About Page, Contact Page
 
 ## Known Issues
 * None
 
 ## Figma Progress
 * [x] Hero Section
-* [ ] Menu Section
+* [x] Menu Section (Home)
 * [x] Cafe's Finest Section
-* [ ] Reviews Section
-* [ ] About Section
+* [x] Reviews Section
+* [x] About Section (Home)
 * [x] Gallery Section
-* [ ] Contact Section
-* [ ] Footer
+* [x] Contact Section (Newsletter)
+* [x] Footer
