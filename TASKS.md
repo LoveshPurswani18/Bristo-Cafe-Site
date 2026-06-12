@@ -10,6 +10,7 @@
 * ✅ Main Navbar design alignment to match Figma design
 * ✅ Home page Hero Section implementation
 * ✅ Home page Gallery Section (Image Carousel) implementation
+* ✅ Home page USP Section (Why Choose Us) implementation
 
 ## Up Next
 * [ ] Home page sections (About, Menu, Contact) implementation

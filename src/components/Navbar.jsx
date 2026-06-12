@@ -12,9 +12,9 @@ export default function Navbar({ currentPage, setCurrentPage }) {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white-cream/95 backdrop-blur-md border-b border-black-5 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-24">
+    <nav className="top-0 z-50 w-full bg-white-cream/95 backdrop-blur-md border-b border-black-5 transition-all duration-300">
+      <div className="max-w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[100px] min-[1720px]:px-[250px]">
+        <div className="flex items-center justify-between h-[88px]">
           {/* Logo Section */}
           <div 
             onClick={() => setCurrentPage('home')}
@@ -23,17 +23,17 @@ export default function Navbar({ currentPage, setCurrentPage }) {
             <img 
               src={logoImg} 
               alt="Bristo Cafe Logo" 
-              className="h-16 w-auto" 
+              className="h-[76px] w-auto" 
             />
           </div>
 
           {/* Desktop Nav Items */}
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden md:flex items-center gap-[clamp(2rem,2vw+2rem,6rem)]">
             {navItems.map((item) => (
               <button
                 key={item.value}
                 onClick={() => setCurrentPage(item.value)}
-                className={`font-heading text-lg tracking-wide transition-all duration-300 relative py-2 cursor-pointer ${
+                className={`font-heading text-[22px] tracking-wide transition-all duration-300 relative py-2 cursor-pointer ${
                   currentPage === item.value
                     ? 'text-primary-1 font-bold'
                     : 'text-black-warm font-normal hover:text-primary-1'
@@ -48,7 +48,7 @@ export default function Navbar({ currentPage, setCurrentPage }) {
           <div className="hidden md:block">
             <button 
               onClick={() => setCurrentPage('contact')}
-              className="cursor-pointer bg-gradient-to-r from-primary-2 to-secondary-1 hover:from-primary-1 hover:to-primary-2 text-white-cream px-8 py-3 rounded-full text-base font-heading font-medium tracking-wide shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+              className="cursor-pointer bg-gradient-to-r from-primary-2 to-secondary-1 hover:from-primary-1 hover:to-primary-2 text-white-cream px-9 py-3.5 rounded-full text-[17px] font-heading font-medium tracking-wide shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
               Visit us today
             </button>
@@ -69,7 +69,7 @@ export default function Navbar({ currentPage, setCurrentPage }) {
 
       {/* Mobile Drawer */}
       <div 
-        className={`md:hidden absolute top-24 left-0 w-full bg-white-cream border-b border-black-10 shadow-xl transition-all duration-300 ease-in-out ${
+        className={`md:hidden absolute top-full left-0 w-full bg-white-cream border-b border-black-10 shadow-xl transition-all duration-300 ease-in-out ${
           isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}
       >

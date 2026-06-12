@@ -28,21 +28,23 @@ All color values are defined in the CSS custom properties and used as Tailwind u
 * **Accent**: `Pacifico`, cursive
 
 ### Sizes & Breakpoints
-* **H1**: Desktop `105px` / Tablet `92px` / Mobile `56px`
-* **H2**: Desktop `84px` / Tablet `72px` / Mobile `48px`
-* **H3**: Desktop `67px` / Tablet `58px` / Mobile `36px`
-* **H4**: Desktop `53px` / Tablet `45px` / Mobile `28px`
-* **H5**: Desktop `43px` / Tablet `36px` / Mobile `24px`
-* **H6**: Desktop `34px` / Tablet `24px` / Mobile `20px`
-* **Body (P)**: Desktop `21px` (lh `32px`) / Tablet `16px` (lh `28px`)
-* **Body Bold (P - Bold)**: Desktop `21px` (lh `32px`) / Tablet `16px` (lh `28px`) with font-semibold/bold
-* **Accent Text**: Desktop `64px` / Tablet `48px` (lh `32px`)
+* Typography is fluid and scales seamlessly using `clamp()` utilities. Avoid hardcoded fixed pixel values or manual `@media` breakpoint jumps.
+* **H1** (`text-h1`): Fluid from ~56px (mobile) to ~105px (desktop)
+* **H2** (`text-h2`): Fluid from ~48px (mobile) to ~84px (desktop)
+* **H3** (`text-h3`): Fluid from ~36px (mobile) to ~67px (desktop)
+* **H4** (`text-h4`): Fluid from ~28px (mobile) to ~53px (desktop)
+* **H5** (`text-h5`): Fluid from ~24px (mobile) to ~43px (desktop)
+* **H6** (`text-h6`): Fluid from ~20px (mobile) to ~34px (desktop)
+* **Body** (`text-body`): Fluid from ~16px (mobile) to ~21px (desktop)
+* **Body Bold** (`text-body-bold`): Same as body, with font-semibold/bold
+* **Accent** (`text-accent`): Fluid from ~48px (mobile) to ~64px (desktop)
 
 ## Spacing & Layout
-* **Max Width**: `max-w-7xl` (1280px) for inner containers.
+* **Max Width**: `max-w-[1440px]` or `max-w-7xl` for inner containers.
 * **Section Spacing**:
-  * Desktop padding: `py-24` (96px) or `py-32` (128px)
-  * Mobile padding: `py-12` (48px) or `py-16` (64px)
+  * Utilize fluid padding for vertical section spacing instead of explicit breakpoints.
+  * Example: `py-[clamp(4rem,10svh,8rem)]` to scale dynamically.
+* **Height Management**: Never use explicit `height` on responsive sections. Use `min-h-[100svh]` for full screen, or `aspect-ratio` for media blocks.
 
 ## UI Elements
 * **Buttons**:

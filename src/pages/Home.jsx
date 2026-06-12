@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import coffeeMug from '../assets/Coffee mug-circle.png';
 import cafeExterior from '../assets/Cafe-Exterior.jpg';
@@ -82,44 +82,92 @@ export default function Home() {
     { image: food2,        title: 'Food Plate 2'  },
   ], []);
 
+  const [isAutoPlayPaused, setIsAutoPlayPaused] = useState(false);
+  const pauseTimeoutRef = useRef(null);
+
+  const handleUserInteraction = () => {
+    setIsAutoPlayPaused(true);
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    
+    // Resume auto-rotation after 5 seconds of inactivity
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsAutoPlayPaused(false);
+    }, 5000);
+  };
+
   // Auto-rotate every 5 seconds
   useEffect(() => {
+    if (isAutoPlayPaused) return;
+
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [slides.length, isAutoPlayPaused]);
 
   const handlePrev = (e) => {
-    e.stopPropagation();
+    if (e) e.stopPropagation();
+    handleUserInteraction();
     setActiveIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   const handleNext = (e) => {
-    e.stopPropagation();
+    if (e) e.stopPropagation();
+    handleUserInteraction();
     setActiveIndex((prev) => (prev + 1) % slides.length);
+  };
+
+  // Swipe handlers for touchscreen devices
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      handleNext();
+    }
+    if (isRightSwipe) {
+      handlePrev();
+    }
   };
 
   return (
     <div className="flex flex-col">
 
       {/* ── Hero Section ─────────────────────────────────────── */}
-      <section className="bg-secondary-1 min-h-[calc(100vh-6rem)] flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-24 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
+      <section className="bg-secondary-1 flex items-center justify-center py-[clamp(4rem,10svh,8rem)] min-h-[100svh] overflow-hidden">
+        <div className="max-w-full px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[100px] min-[1720px]:px-[250px] w-full h-full flex items-center">
+          <div className="flex flex-col-reverse lg:flex-row justify-between items-center w-full gap-12 lg:gap-0">
             {/* Left: Text */}
-            <div className="md:col-span-7 flex flex-col items-center text-center space-y-6 md:space-y-8 max-w-xl mx-auto">
-              <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-primary-1 leading-tight tracking-normal">
+            <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start space-y-6 lg:space-y-8 mt-4 lg:mt-0 lg:pr-8">
+              <h1 className="text-h1 text-primary-1 leading-tight tracking-normal text-center lg:text-left">
                 Welcome to Bristo Café
               </h1>
-              <p className="font-body text-base md:text-lg lg:text-xl text-primary-1/90 font-light leading-relaxed max-w-lg">
-                Indulge in artisanal coffee and delightful pastries in our cozy space. Join us for moments to cherish and conversations to remember.
+              <p className="text-body text-primary-1/90 text-center lg:text-left">
+                Indulge in artisanal coffee and delightful pastries in our<br className="hidden xl:block" />
+                cozy space. Join us for moments to cherish and<br className="hidden xl:block" />
+                conversations to remember.
               </p>
             </div>
 
             {/* Right: Coffee Mug */}
-            <div className="md:col-span-5 flex justify-center items-center">
-              <div className="relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[440px] aspect-square flex items-center justify-center">
+            <div className="w-full lg:w-[45%] flex justify-center lg:justify-end items-center">
+              <div className="relative w-full max-w-[clamp(280px,50vw,650px)] aspect-square flex items-center justify-center">
                 <img
                   src={coffeeMug}
                   alt="Bristo Cafe Latte Art Coffee Mug"
@@ -133,7 +181,12 @@ export default function Home() {
 
       {/* ── Full-width Image Carousel ─────────────────────────── */}
       <section className="relative w-full overflow-hidden bg-black-100">
-        <div className="relative w-full h-[500px] sm:h-[650px] md:h-[800px] lg:h-[900px] group">
+        <div 
+          className="relative w-full min-h-[100svh] group"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           {/* Slides */}
           {slides.map((slide, index) => {
             const isActive = index === activeIndex;
@@ -178,7 +231,10 @@ export default function Home() {
             {slides.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => {
+                  handleUserInteraction();
+                  setActiveIndex(index);
+                }}
                 className={`transition-all duration-500 ease-out cursor-pointer h-2.5 rounded-full ${
                   index === activeIndex
                     ? 'bg-secondary-1 w-8 scale-110 shadow-md'
@@ -192,35 +248,35 @@ export default function Home() {
       </section>
 
       {/* ── USP Section: Why Choose Bristo Café? ─────────────── */}
-      <section className="bg-secondary-2 py-20 md:py-28 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-secondary-2 py-[clamp(6rem,10vw,10rem)] px-6 lg:px-12 flex flex-col justify-center">
+        <div className="max-w-[1440px] mx-auto w-full">
 
           {/* Section Heading */}
-          <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-medium text-primary-1 text-center mb-16 md:mb-20 leading-tight">
+          <h2 className="text-h2 text-primary-1 text-center mb-[clamp(4rem,6vw,6rem)] leading-tight">
             Why Choose Bristo Cafe?
           </h2>
 
           {/* Three-column USP cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] gap-[clamp(3rem,6vw,5rem)] items-start">
             {USP_ITEMS.map((item, index) => {
               const Icon = item.icon;
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center space-y-5 group"
+                  className="flex flex-col items-center text-center group @container px-2"
                 >
                   {/* Icon */}
-                  <div className="text-primary-1 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1 mb-2">
+                  <div className="text-primary-1 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1 mb-6">
                     <Icon />
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading text-2xl md:text-[28px] font-medium text-primary-1 leading-snug whitespace-pre-line">
+                  <h3 className="text-h5 text-primary-1 leading-snug whitespace-pre-line mb-4">
                     {item.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="font-body text-[15px] md:text-base text-black-75 font-light leading-relaxed max-w-xs mt-2">
+                  <p className="text-body text-black-75 max-w-[340px] leading-relaxed">
                     {item.description}
                   </p>
                 </div>

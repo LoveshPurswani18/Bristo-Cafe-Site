@@ -24,7 +24,7 @@ export default function Footer({ setCurrentPage }) {
   return (
     <footer className="bg-black-warm text-white-cream border-t border-primary-1/20 font-body">
       <div className="max-w-7xl mx-auto px-6 py-16 lg:px-12 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(250px,100%),1fr))] gap-12 lg:gap-8">
           
           {/* Logo & About */}
           <div className="space-y-6">

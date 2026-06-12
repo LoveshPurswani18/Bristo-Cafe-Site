@@ -24,9 +24,12 @@ At the beginning of every session, when the user says **"Read all docs and resum
 * **Component-focused**: Follow the Single Responsibility Principle. Build small, reusable, well-commented React components.
 * **Images directory**: Save all image assets in `/src/assets/images/` with descriptive, lower-case filenames (e.g. `hero-bg.jpg`, `latte-art.png`).
 
-## 5. Mobile-First Responsiveness
-* Always design layout structures to be mobile-first (base styles represent mobile `375px` screen sizes, and use breakpoints like `sm:`, `md:`, `lg:`, `xl:` for larger screen sizes).
-* Adhere strictly to the 8pt grid system for widths, heights, margins, and padding.
+## 5. Responsive Design Principles
+* **Fluid over Fixed**: Use fluid typography (`clamp()`) and fluid spacing instead of managing explicit pixel sizes across breakpoints.
+* **Intrinsic Grids**: Rely on content-based intrinsic layouts. Use `grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))]` instead of brittle, hardcoded breakpoints like `md:grid-cols-3`.
+* **Dynamic Viewports**: Use `svh` or `dvh` for full-screen elements instead of fixed heights to maintain layout integrity across all devices.
+* **Container Queries**: Prefer `@container` and style queries for component-level adaptations rather than global viewport media queries when possible.
+* Adhere strictly to the 8pt grid system for baseline alignments.
 
 ## 6. Documentation Sync Workflow
 * After completing a section from Figma, immediately update `TASKS.md`, `UI_GUIDELINES.md`, and `CONTENT.md` to reflect any new assets, colors, sizes, or copy.
