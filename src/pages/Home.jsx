@@ -365,6 +365,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── CTA Section ────────────────────────────────────────── */}
+      <section className="bg-white-cream py-[clamp(6rem,10vw,8rem)] px-6 lg:px-12 flex justify-center">
+        <div className="w-full max-w-[1440px] flex flex-col md:flex-row items-center justify-between gap-8 md:px-12 lg:px-24">
+          <button className="bg-primary-1 hover:bg-primary-2 text-white-cream font-heading text-[clamp(1.5rem,2.5vw,2.25rem)] px-[clamp(3rem,5vw,5rem)] py-[clamp(1rem,2vw,1.5rem)] rounded-[1.25rem] shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
+            Visit Café
+          </button>
+          <button className="bg-secondary-1 hover:bg-[#c4ad84] text-primary-1 font-heading text-[clamp(1.5rem,2.5vw,2.25rem)] px-[clamp(3rem,5vw,5rem)] py-[clamp(1rem,2vw,1.5rem)] rounded-[1.25rem] shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
+            Explore our Menu
+          </button>
+        </div>
+      </section>
+
     </div>
   );
 }
