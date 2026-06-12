@@ -47,6 +47,12 @@
 * **About Us / Origins**:
   * [TODO: About copy from Figma screenshots]
 
+## Reviews
+* **Michael Lee**: `I've been a regular at Bristo Cafe for years now, and it never disappoints! Their baristas are true coffee artists, and the selection of pastries is always tempting. The staff is friendly, making it feel like a second home. Bristo Cafe is my go-to spot for a perfect coffee break!`
+* **Sarah M.**: `I stumbled upon Bristo Cafe during my visit to NYC, and it turned out to be the highlight of my trip! The coffee was exceptional, and the ambiance was so cozy and inviting. Their almond croissant was to die for! Can't wait to visit again. Highly recommended!`
+* **Emily Pough**: `As a vegan, finding cafes with good plant-based options can be challenging. But Bristo Cafe pleasantly surprised me! Their Vegan Avocado Toast is delicious, and the vegan pastries are divine. The ambiance is lovely, making it a relaxing place to unwind with friends.`
+* **Jason**: `"Fantastic coffee and great service! The baristas at Bristo Cafe are true experts, and you can taste the difference in every cup. Their Red Velvet Cake is a showstopper. This cafe is a gem in the city!"`
+
 ## Menu Inventory
 * **Café's Finest (Top Items)**:
   * Signature Espresso blend: `Our carefully curated and richly aromatic espresso blend is a must-try for coffee connoisseurs, offering a delightful burst of flavors.`

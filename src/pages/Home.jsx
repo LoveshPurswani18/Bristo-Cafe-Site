@@ -11,6 +11,10 @@ import redVelvet from '../assets/Red velvet cake-C.png';
 import matcha from '../assets/Matcha green tea-C.png';
 import avocadoToast from '../assets/Avocado toast-C.png';
 import blueberryPancakes from '../assets/Bluberry pancake-C.png';
+import reviewerMale1 from '../assets/male-1-C.png';
+import reviewerFemale1 from '../assets/female-1-C.png';
+import reviewerFemale2 from '../assets/female-2-C.png';
+import reviewerMale2 from '../assets/male-2-C.png';
 
 /* ─── USP Icon Components ─────────────────────────────────── */
 const CoffeeMachineIcon = () => (
@@ -106,6 +110,29 @@ const FINEST_ITEMS = [
     image: blueberryPancakes,
     title: 'Blueberry Bliss\nPancakes',
     description: 'Indulge in a stack of fluffy pancakes bursting with plump, juicy blueberries. With maple syrup, topped with whipped cream. Best breakfast option.',
+  },
+];
+
+const REVIEWS_DATA = [
+  {
+    image: reviewerMale1,
+    name: 'Michael Lee',
+    review: "I've been a regular at Bristo Cafe for years now, and it never disappoints! Their baristas are true coffee artists, and the selection of pastries is always tempting. The staff is friendly, making it feel like a second home. Bristo Cafe is my go-to spot for a perfect coffee break!",
+  },
+  {
+    image: reviewerFemale1,
+    name: 'Sarah M.',
+    review: "I stumbled upon Bristo Cafe during my visit to NYC, and it turned out to be the highlight of my trip! The coffee was exceptional, and the ambiance was so cozy and inviting. Their almond croissant was to die for! Can't wait to visit again. Highly recommended!",
+  },
+  {
+    image: reviewerFemale2,
+    name: 'Emily Pough',
+    review: "As a vegan, finding cafes with good plant-based options can be challenging. But Bristo Cafe pleasantly surprised me! Their Vegan Avocado Toast is delicious, and the vegan pastries are divine. The ambiance is lovely, making it a relaxing place to unwind with friends.",
+  },
+  {
+    image: reviewerMale2,
+    name: 'Jason',
+    review: "\"Fantastic coffee and great service! The baristas at Bristo Cafe are true experts, and you can taste the difference in every cup. Their Red Velvet Cake is a showstopper. This cafe is a gem in the city!\"",
   },
 ];
 
@@ -377,6 +404,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Reviews Section ────────────────────────────────────── */}
+      <section className="bg-white-cream pb-[clamp(6rem,10vw,10rem)] pt-0 px-6 lg:px-12 flex flex-col justify-center">
+        <div className="max-w-5xl mx-auto w-full">
+          {/* Section Heading */}
+          <h2 className="text-h1 text-primary-1 text-center mb-[clamp(4rem,6vw,6rem)] leading-tight">
+            Reviews
+          </h2>
+
+          {/* Reviews Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(2rem,5vw,4rem)]">
+            {REVIEWS_DATA.map((review, index) => (
+              <div
+                key={index}
+                className="bg-secondary-2 rounded-2xl p-[clamp(2rem,4vw,3.5rem)] flex flex-col items-center text-center shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                {/* Avatar */}
+                <div className="w-[clamp(100px,15vw,140px)] h-auto aspect-square mb-6">
+                  <img
+                    src={review.image}
+                    alt={`${review.name}'s Avatar`}
+                    className="w-full h-full drop-shadow-md hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Review Text */}
+                <p className="text-body text-black-75 leading-relaxed mb-8 grow">
+                  {review.review}
+                </p>
+
+                {/* Name */}
+                <h3 className="text-accent text-[clamp(2.5rem,4vw,3.5rem)] text-primary-1 leading-none mt-auto pt-4">
+                  {review.name}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
