@@ -13,7 +13,7 @@
 * ✅ Home page USP Section (Why Choose Us) implementation
 
 ## Up Next
-* [ ] Home page sections (About, Menu, Contact) implementation
+* [ ] Home page sections (Menu - Cafe's Finest, About, Contact) implementation
 
 ## Known Issues
 * None
@@ -21,6 +21,7 @@
 ## Figma Progress
 * [x] Hero Section
 * [ ] Menu Section
+  * [x] Cafe's Finest Section
 * [ ] About Section
 * [x] Gallery Section
 * [ ] Contact Section

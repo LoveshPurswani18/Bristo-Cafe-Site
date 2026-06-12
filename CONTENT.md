@@ -48,4 +48,11 @@
   * [TODO: About copy from Figma screenshots]
 
 ## Menu Inventory
+* **Café's Finest (Top Items)**:
+  * Signature Espresso blend: `Our carefully curated and richly aromatic espresso blend is a must-try for coffee connoisseurs, offering a delightful burst of flavors.`
+  * Flaky Croissants-Sweet & Savory: `Indulge in our freshly baked, buttery croissants, available in both sweet (e.g., almond, chocolate) and savory (e.g., ham and cheese) options.`
+  * Decadent Red Velvet Cake: `Treat yourself to a slice of our velvety and moist red velvet cake, topped with luscious cream cheese frosting, a heavenly delight for dessert lovers.`
+  * Matcha Green Tea Latte: `Experience the soothing and earthy goodness of our creamy Matcha Green Tea Latte, a delightful fusion of tradition and taste.`
+  * Vegan Avocado Toast with cream: `Savor the goodness of our Vegan Avocado Toast, featuring smashed avocado, cherry tomatoes, and a drizzle of balsamic glaze on freshly baked artisanal bread.`
+  * Blueberry Bliss Pancakes: `Indulge in a stack of fluffy pancakes bursting with plump, juicy blueberries. With maple syrup, topped with whipped cream. Best breakfast option.`
 * [TODO: Full lists of Menu items, categories, prices, badges, and details from Figma screenshots]

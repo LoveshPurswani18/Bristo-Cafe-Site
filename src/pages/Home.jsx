@@ -5,6 +5,12 @@ import cafeExterior from '../assets/Cafe-Exterior.jpg';
 import cafeInterior from '../assets/Cafe-Interior.jpg';
 import food1 from '../assets/Food-1.jpg';
 import food2 from '../assets/Food-2.jpg';
+import espresso from '../assets/Espresso-1-C.png';
+import croissants from '../assets/Croissants-C.png';
+import redVelvet from '../assets/Red velvet cake-C.png';
+import matcha from '../assets/Matcha green tea-C.png';
+import avocadoToast from '../assets/Avocado toast-C.png';
+import blueberryPancakes from '../assets/Bluberry pancake-C.png';
 
 /* ─── USP Icon Components ─────────────────────────────────── */
 const CoffeeMachineIcon = () => (
@@ -67,6 +73,39 @@ const USP_ITEMS = [
     title: 'Culinary Diversity,\nDietary Delights',
     description:
       'Indulge in a diverse menu that caters to all tastes, including vegan and gluten-free options, ensuring everyone\'s satisfaction with every visit.',
+  },
+];
+
+const FINEST_ITEMS = [
+  {
+    image: espresso,
+    title: 'Signature Espresso\nblend',
+    description: 'Our carefully curated and richly aromatic espresso blend is a must-try for coffee connoisseurs, offering a delightful burst of flavors.',
+  },
+  {
+    image: croissants,
+    title: 'Flaky Croissants-\nSweet & Savory',
+    description: 'Indulge in our freshly baked, buttery croissants, available in both sweet (e.g., almond, chocolate) and savory (e.g., ham and cheese) options.',
+  },
+  {
+    image: redVelvet,
+    title: 'Decadent Red Velvet\nCake',
+    description: 'Treat yourself to a slice of our velvety and moist red velvet cake, topped with luscious cream cheese frosting, a heavenly delight for dessert lovers.',
+  },
+  {
+    image: matcha,
+    title: 'Matcha Green Tea\nLatte',
+    description: 'Experience the soothing and earthy goodness of our creamy Matcha Green Tea Latte, a delightful fusion of tradition and taste.',
+  },
+  {
+    image: avocadoToast,
+    title: 'Vegan Avocado Toast\nwith cream',
+    description: 'Savor the goodness of our Vegan Avocado Toast, featuring smashed avocado, cherry tomatoes, and a drizzle of balsamic glaze on freshly baked artisanal bread.',
+  },
+  {
+    image: blueberryPancakes,
+    title: 'Blueberry Bliss\nPancakes',
+    description: 'Indulge in a stack of fluffy pancakes bursting with plump, juicy blueberries. With maple syrup, topped with whipped cream. Best breakfast option.',
   },
 ];
 
@@ -284,6 +323,45 @@ export default function Home() {
             })}
           </div>
 
+        </div>
+      </section>
+
+      {/* ── Café's Finest Section ──────────────────────────────── */}
+      <section className="bg-primary-1 py-[clamp(6rem,10vw,10rem)] px-6 lg:px-12 flex flex-col justify-center">
+        <div className="max-w-[1440px] mx-auto w-full">
+          {/* Section Heading */}
+          <h2 className="text-h2 text-white-cream text-center mb-[clamp(4rem,6vw,6rem)] leading-tight">
+            Café's Finest
+          </h2>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[clamp(2.5rem,8vw,8rem)]">
+            {FINEST_ITEMS.map((item, index) => (
+              <div
+                key={index}
+                className="bg-secondary-2 rounded-[2rem] p-[clamp(2rem,4vw,3.5rem)] flex flex-col items-center text-center shadow-lg hover:shadow-2xl transition-shadow duration-300"
+              >
+                {/* Image */}
+                <div className="w-[clamp(120px,20vw,180px)] h-auto aspect-square mb-6">
+                  <img
+                    src={item.image}
+                    alt={item.title.replace('\n', ' ')}
+                    className="w-full h-full drop-shadow-md hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-h4 text-primary-1 leading-snug whitespace-pre-line mb-4 font-semibold">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-body text-black-75 max-w-[340px] leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
