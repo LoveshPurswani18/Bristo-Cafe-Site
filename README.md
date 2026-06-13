@@ -1,5 +1,7 @@
 # Bristo Cafe
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-bristo--cafe.vercel.app-success?style=for-the-badge&logo=vercel)](https://bristo-cafe.vercel.app/)
+
 A premium, responsive, three-page luxury cafe website built with React, Vite, and Tailwind CSS v4.
 
 ## Overview
@@ -21,12 +23,12 @@ Bristo Cafe is a modern digital home for a luxury cafe, built to showcase the ca
 3. Run `npm run dev` to start the local development server
 
 ### Building for Production
-Run `npm run build` to create a production-ready bundle in the `dist` directory.
+Run `npm run build` to create a production-ready bundle in the `dist` directory. The project is optimized for direct deployment to Vercel.
 
 ## Pages
 - **Home**: Hero section, Image Carousel Gallery, USP (Why Choose Us), Reviews, and Newsletter CTA.
 - **Menu**: Interactive categorized menu for coffee, tea, pastries, savory delights, and beverages.
-- **Contact** (WIP): Location, hours, and booking forms.
+- **Contact**: Location, hours, interactive Image Gallery, FAQ accordion, and Get in Touch booking form.
 
 ## Design System
 The site uses a strict design system defined in `UI_GUIDELINES.md`. Core colors:

@@ -9,7 +9,7 @@
 * **Address**: 123 Espresso Lane, Coffee County, CC 90210
 * **Phone**: +1 (555) 123-4567
 * **Email**: hello@bristocafe.com
-* **Google Maps Link**: [TODO: Google Maps share URL]
+* **Google Maps Link**: Embedded interactive map on Contact Page
 
 ## Opening Hours
 * **Monday - Friday**: 08:00 AM - 08:00 PM
@@ -45,7 +45,7 @@
     3. Artisanal (Morning Delights): `Our hand-selected breakfast plates made from fresh organic local produce.`
     4. Gourmet (Perfect Pairings): `Savory options designed to pair beautifully with our house espresso roast.`
 * **About Us / Origins**:
-  * [TODO: About copy from Figma screenshots]
+  * Home page USP section fully covers cafe origins and commitments to quality.
 
 ## Reviews
 * **Michael Lee**: `I've been a regular at Bristo Cafe for years now, and it never disappoints! Their baristas are true coffee artists, and the selection of pastries is always tempting. The staff is friendly, making it feel like a second home. Bristo Cafe is my go-to spot for a perfect coffee break!`

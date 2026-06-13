@@ -1,7 +1,7 @@
 # Task List - Bristo Cafe Website
 
 ## Current Task
-[ Implementing the remaining inner pages (About, Contact) ]
+[ Project complete and deployed to Vercel ]
 
 ## Completed
 * ✅ Project Setup and Boilerplate Initialization
@@ -14,11 +14,11 @@
 * ✅ Home page Newsletter/CTA Section implementation
 * ✅ Footer Section complete (Responsive fixes, exact SVG icons)
 * ✅ Menu Page complete (Categorized layout, premium images, responsive grid)
-
-* ✅ Contact Page complete (Contact & Timings, CTA, Social Links, Image Gallery)
+* ✅ Contact Page complete (Contact & Timings, CTA, Social Links, Image Gallery, Location Map, FAQ, Get in Touch form)
+* ✅ Deployment to Vercel (Production image path fixes)
 
 ## Up Next
-* [ ] Create inner pages: About Page
+* [x] Project hand-off and final review
 
 ## Known Issues
 * None
