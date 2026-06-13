@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const LocationIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 sm:w-8 sm:h-8 text-black-100 shrink-0">
@@ -19,6 +19,24 @@ const MailIcon = () => (
 );
 
 export default function Contact() {
+  const [galleryTab, setGalleryTab] = useState('interior');
+
+  const interiorImages = [
+    'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&w=1200',
+  ];
+
+  const exteriorImages = [
+    'https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&q=80&w=1200',
+    'https://plus.unsplash.com/premium_photo-1712736395898-02844eeb1968?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  ];
+
+  const activeImages = galleryTab === 'interior' ? interiorImages : exteriorImages;
+
   return (
     <div className="flex flex-col w-full">
       {/* 1. Contact and Timings Section */}
@@ -204,6 +222,86 @@ export default function Contact() {
               <span className="font-heading text-black-100 text-base md:text-xl lg:text-[1.75rem] leading-none">Pinterest</span>
             </div>
           </a>
+        </div>
+      </section>
+
+      {/* 4. Image Gallery Section */}
+      <section className="bg-secondary-1 py-20 md:py-32 px-6 flex flex-col items-center">
+        <h2 className="font-heading text-black-100 text-[clamp(2.5rem,5vw,4.5rem)] mb-10 text-center">
+          Image Gallery
+        </h2>
+
+        <div className="relative bg-primary-1 p-2 rounded-full grid grid-cols-2 mb-12 sm:mb-16 shadow-inner w-[95%] max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[600px]">
+          {/* Sliding Pill Background */}
+          <div 
+            className="absolute top-2 bottom-2 left-2 w-[calc(50%-8px)] bg-secondary-1 rounded-full shadow-md transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0"
+            style={{ transform: galleryTab === 'interior' ? 'translateX(0)' : 'translateX(100%)' }}
+          />
+
+          <button
+            onClick={() => setGalleryTab('interior')}
+            className={`relative z-10 py-3 sm:py-3.5 rounded-full font-heading text-lg sm:text-xl transition-colors duration-500 text-center outline-none focus-visible:ring-2 focus-visible:ring-secondary-1 ${
+              galleryTab === 'interior'
+                ? 'text-black-100'
+                : 'text-white-cream hover:text-secondary-2'
+            }`}
+          >
+            Interior
+          </button>
+          <button
+            onClick={() => setGalleryTab('exterior')}
+            className={`relative z-10 py-3 sm:py-3.5 rounded-full font-heading text-lg sm:text-xl transition-colors duration-500 text-center outline-none focus-visible:ring-2 focus-visible:ring-secondary-1 ${
+              galleryTab === 'exterior'
+                ? 'text-black-100'
+                : 'text-white-cream hover:text-secondary-2'
+            }`}
+          >
+            Exterior
+          </button>
+        </div>
+
+        <div className="grid w-full max-w-[1200px]" style={{ gridTemplateAreas: "'stack'" }}>
+          {/* Interior Images */}
+          <div 
+            style={{ gridArea: 'stack' }}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 w-full transition-all duration-700 ease-in-out ${
+              galleryTab === 'interior' 
+                ? 'opacity-100 translate-x-0 pointer-events-auto z-10' 
+                : 'opacity-0 -translate-x-12 pointer-events-none z-0'
+            }`}
+          >
+            {interiorImages.map((src, index) => (
+              <div key={src} className="w-full aspect-[4/3] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-lg group relative bg-black-10">
+                <img
+                  src={src}
+                  alt={`Interior view ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Exterior Images */}
+          <div 
+            style={{ gridArea: 'stack' }}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 w-full transition-all duration-700 ease-in-out ${
+              galleryTab === 'exterior' 
+                ? 'opacity-100 translate-x-0 pointer-events-auto z-10' 
+                : 'opacity-0 translate-x-12 pointer-events-none z-0'
+            }`}
+          >
+            {exteriorImages.map((src, index) => (
+              <div key={src} className="w-full aspect-[4/3] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-lg group relative bg-black-10">
+                <img
+                  src={src}
+                  alt={`Exterior view ${index + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

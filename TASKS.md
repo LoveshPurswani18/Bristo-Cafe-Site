@@ -15,8 +15,10 @@
 * ✅ Footer Section complete (Responsive fixes, exact SVG icons)
 * ✅ Menu Page complete (Categorized layout, premium images, responsive grid)
 
+* ✅ Contact Page complete (Contact & Timings, CTA, Social Links, Image Gallery)
+
 ## Up Next
-* [ ] Create inner pages: About Page, Contact Page
+* [ ] Create inner pages: About Page
 
 ## Known Issues
 * None

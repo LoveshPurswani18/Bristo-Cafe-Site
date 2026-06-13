@@ -111,3 +111,15 @@
     * **Rich Hot Chocolate**: Luxurious melted dark chocolate blended with steamed whole milk, topped with toasted marshmallows. ($4.50 Mug)
     * **Sparkling Blood Orange Mocktail**: A vibrant, artisanal mocktail crafted with fresh blood orange juice, aromatic bitters, and a splash of sparkling tonic. ($5.50 Glass)
     * **Tropical Mango Smoothie**: A thick and creamy blend of ripe mangoes, banana, Greek yogurt, and a splash of coconut milk. ($6.50 Glass)
+
+## Image Gallery
+* **Interior Images**:
+  1. `https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200`
+  2. `https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=1200`
+  3. `https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=1200`
+  4. `https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&w=1200`
+* **Exterior Images**:
+  1. `https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&q=80&w=1200`
+  2. `https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&q=80&w=1200`
+  3. `https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&q=80&w=1200`
+  4. `https://images.unsplash.com/photo-1504198458649-3128b932f49e?auto=format&fit=crop&q=80&w=1200`
