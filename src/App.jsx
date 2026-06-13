@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Contact from './pages/Contact';
+import DeveloperBadge from './components/DeveloperBadge';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -33,6 +34,9 @@ function App() {
 
       {/* Footer */}
       <Footer setCurrentPage={setCurrentPage} />
+
+      {/* Floating Developer Badge */}
+      <DeveloperBadge />
     </div>
   );
 }
