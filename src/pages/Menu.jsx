@@ -1,6 +1,16 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
+import imgCat1 from '../assets/coffee-specialty-menu-category-1-C.png';
+import imgCat2 from '../assets/tea-specialty-menu-category-2-C.png';
+import imgCat3 from '../assets/pastries-desserts-menu-category-3-C.png';
+import imgCat4 from '../assets/savory-delights-menu-category-4-C.png';
+import imgCat5 from '../assets/beverages-menu-category-5-C.png';
+import imgCaramel from '../assets/caramel-macchiato.png';
+import imgMocha from '../assets/Mocha-Latte.png';
+import imgVanilla from '../assets/vanilla-latte.png';
+import imgEspresso from '../assets/espresso-con-panna.png';
+
 const DollarIcon = () => (
   <div className="w-[24px] h-[24px] md:w-[28px] md:h-[28px] rounded-full border-2 border-[#282523] text-[#282523] flex items-center justify-center shrink-0">
     <span className="font-sans font-bold text-[14px] md:text-[16px] leading-none">$</span>
@@ -12,7 +22,7 @@ const menuData = [
     id: 'coffee-specialties',
     title: 'Coffee Specialties',
     description: 'Explore a diverse selection of expertly crafted coffee drinks that cater to coffee enthusiasts.',
-    image: '/src/assets/coffee-specialty-menu-category-1-C.png',
+    image: imgCat1,
     items: [
       {
         id: 'bristos-espresso',
@@ -28,7 +38,7 @@ const menuData = [
         id: 'caramel-macchiato',
         title: "Caramel Macchiato",
         description: 'A delightful combination of espresso, steamed milk, and caramel syrup, topped with a swirl of whipped cream',
-        image: '/src/assets/caramel-macchiato.png',
+        image: imgCaramel,
         prices: [
           { label: 'Regular', price: '$4.75' },
           { label: 'Iced', price: '$5.50' }
@@ -38,7 +48,7 @@ const menuData = [
         id: 'mocha-latte',
         title: "Mocha Latte",
         description: 'A velvety blend of espresso, cocoa, and steamed milk, finished with a dusting of cocoa powder.',
-        image: '/src/assets/Mocha-Latte.png',
+        image: imgMocha,
         prices: [
           { label: 'Regular', price: '$4.95' },
           { label: 'Decaf', price: '$5.25' }
@@ -48,7 +58,7 @@ const menuData = [
         id: 'vanilla-latte',
         title: "Vanilla Latte",
         description: 'Smooth espresso mixed with creamy vanilla syrup and steamed milk, creating a deliciously balanced drink.',
-        image: '/src/assets/vanilla-latte.png',
+        image: imgVanilla,
         prices: [
           { label: 'Regular', price: '$4.80' },
           { label: 'Sugar-Free', price: '$5.00' }
@@ -58,7 +68,7 @@ const menuData = [
         id: 'espresso-con-panna',
         title: "Espresso Con Panna",
         description: 'A bold espresso shot topped with a dollop of freshly whipped cream, a simple yet indulgent choice.',
-        image: '/src/assets/espresso-con-panna.png',
+        image: imgEspresso,
         prices: [
           { label: 'Single Shot', price: '$4.00' }
         ]
@@ -69,7 +79,7 @@ const menuData = [
     id: 'tea-specialties',
     title: 'Tea Specialties',
     description: 'Discover the perfect cup from our hand-selected teas, sourced from the finest tea gardens.',
-    image: '/src/assets/tea-specialty-menu-category-2-C.png',
+    image: imgCat2,
     imageScale: 'scale-[1.9]',
     items: [
       {
@@ -120,7 +130,7 @@ const menuData = [
     id: 'pastries-desserts',
     title: 'Pastries & Desserts',
     description: 'Indulge in our sweet treats baked fresh daily with love, butter, and wholesome ingredients.',
-    image: '/src/assets/pastries-desserts-menu-category-3-C.png',
+    image: imgCat3,
     imageScale: 'scale-[1.9]',
     items: [
       {
@@ -177,9 +187,9 @@ const menuData = [
   {
     id: 'savory-delights',
     title: 'Savory Delights',
-    description: 'Discover our array of flavorful, savory options perfect for breakfast, brunch, or a light lunch.',
-    image: '/src/assets/savory-delights-menu-category-4-C.png',
-    imageScale: 'scale-[1.9]',
+    description: 'Satisfy your hunger with our savory selections, featuring fresh, locally sourced ingredients.',
+    image: imgCat4,
+    imageScale: 'scale-[2]',
     items: [
       {
         id: 'vegan-avocado-toast',
@@ -228,8 +238,8 @@ const menuData = [
   {
     id: 'beverages',
     title: 'Beverages',
-    description: 'Refresh and recharge with our cold press juices, specialty lemonades, and more.',
-    image: '/src/assets/beverages-menu-category-5-C.png',
+    description: 'Quench your thirst with our selection of cool, refreshing beverages perfect for any time of day.',
+    image: imgCat5,
     imageScale: 'scale-[1.9]',
     items: [
       {
