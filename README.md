@@ -25,7 +25,7 @@ Run `npm run build` to create a production-ready bundle in the `dist` directory.
 
 ## Pages
 - **Home**: Hero section, Image Carousel Gallery, USP (Why Choose Us), Reviews, and Newsletter CTA.
-- **Menu** (WIP): Interactive categorized menu for coffee, tea, and pastries.
+- **Menu**: Interactive categorized menu for coffee, tea, pastries, savory delights, and beverages.
 - **Contact** (WIP): Location, hours, and booking forms.
 
 ## Design System

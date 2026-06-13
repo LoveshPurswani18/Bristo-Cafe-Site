@@ -1,7 +1,7 @@
 # Task List - Bristo Cafe Website
 
 ## Current Task
-[ Implementing the remaining Home page sections (Menu, About, Gallery, Contact) once design assets are provided ]
+[ Implementing the remaining inner pages (About, Contact) ]
 
 ## Completed
 * ✅ Project Setup and Boilerplate Initialization
@@ -13,9 +13,10 @@
 * ✅ Home page Reviews Section implementation
 * ✅ Home page Newsletter/CTA Section implementation
 * ✅ Footer Section complete (Responsive fixes, exact SVG icons)
+* ✅ Menu Page complete (Categorized layout, premium images, responsive grid)
 
 ## Up Next
-* [ ] Create inner pages: Menu Page, About Page, Contact Page
+* [ ] Create inner pages: About Page, Contact Page
 
 ## Known Issues
 * None
