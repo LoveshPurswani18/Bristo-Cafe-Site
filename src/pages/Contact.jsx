@@ -20,6 +20,36 @@ const MailIcon = () => (
 
 export default function Contact() {
   const [galleryTab, setGalleryTab] = useState('interior');
+  const [openFaq, setOpenFaq] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedPurpose, setSelectedPurpose] = useState('');
+
+  const faqs = [
+    {
+      question: "Do I need to make a reservation?",
+      answer: "Reservations are not required but highly recommended for larger groups or during peak hours to ensure availability."
+    },
+    {
+      question: "What types of payment do you accept?",
+      answer: "We accept cash, all major credit cards, and mobile payments like Apple Pay and Google Pay."
+    },
+    {
+      question: "Do you offer vegan or gluten-free options?",
+      answer: "Yes, we have a variety of vegan and gluten-free pastries, meals, and alternative milks for our beverages."
+    },
+    {
+      question: "Is Wi-Fi available for customers?",
+      answer: "Yes, we offer complimentary high-speed Wi-Fi for all our guests."
+    },
+    {
+      question: "Do you host private events or parties?",
+      answer: "Yes, our space is available for private booking. Please contact us through the form above for more details and availability."
+    },
+    {
+      question: "How can I stay updated on upcoming events and promotions?",
+      answer: "Follow us on our social media channels or subscribe to our newsletter to receive the latest updates."
+    }
+  ];
 
   const interiorImages = [
     'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200',
@@ -38,7 +68,7 @@ export default function Contact() {
   const activeImages = galleryTab === 'interior' ? interiorImages : exteriorImages;
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full overflow-hidden">
       {/* 1. Contact and Timings Section */}
       <section className="bg-primary-2 py-20 md:py-24 px-6 md:px-12 lg:px-16 xl:px-24 flex items-center justify-center">
         <div className="max-w-[1440px] w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-[80px] mx-auto">
@@ -131,12 +161,12 @@ export default function Contact() {
       </section>
 
       {/* 2. CTA Section */}
-      <section className="bg-white-cream py-16 md:py-24 flex items-center justify-center px-6">
-        <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 lg:gap-24 w-full max-w-[1000px] justify-center items-center">
-          <button className="bg-primary-2 text-white-cream font-heading text-2xl md:text-3xl py-5 px-12 md:px-20 rounded-[1.25rem] hover:bg-primary-1 transition-colors shadow-sm whitespace-nowrap">
+      <section className="bg-white-cream py-16 md:py-24 flex items-center justify-center px-6 w-full">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-12 lg:gap-24 w-full max-w-[1000px] justify-center items-center">
+          <button className="bg-primary-2 text-white-cream font-heading text-xl sm:text-2xl md:text-3xl py-4 sm:py-5 px-8 sm:px-12 md:px-20 rounded-[1.25rem] hover:bg-primary-1 transition-colors shadow-sm whitespace-nowrap w-full sm:w-auto">
             Contact Us
           </button>
-          <button className="bg-secondary-1 text-black-100 font-heading text-2xl md:text-3xl py-5 px-12 md:px-20 rounded-[1.25rem] hover:brightness-95 transition-all shadow-sm whitespace-nowrap">
+          <button className="bg-secondary-1 text-black-100 font-heading text-xl sm:text-2xl md:text-3xl py-4 sm:py-5 px-8 sm:px-12 md:px-20 rounded-[1.25rem] hover:brightness-95 transition-all shadow-sm whitespace-nowrap w-full sm:w-auto">
             Get Directions
           </button>
         </div>
@@ -226,7 +256,7 @@ export default function Contact() {
       </section>
 
       {/* 4. Image Gallery Section */}
-      <section className="bg-secondary-1 py-20 md:py-32 px-6 flex flex-col items-center">
+      <section className="bg-secondary-1 py-20 md:py-32 px-6 flex flex-col items-center overflow-hidden w-full">
         <h2 className="font-heading text-black-100 text-[clamp(2.5rem,5vw,4.5rem)] mb-10 text-center">
           Image Gallery
         </h2>
@@ -301,6 +331,155 @@ export default function Contact() {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Location Section */}
+      <section className="bg-white-cream py-20 md:py-32 px-4 sm:px-6 flex flex-col items-center w-full overflow-hidden">
+        <h2 className="font-heading text-black-100 text-[clamp(2.5rem,5vw,4.5rem)] mb-10 text-center">
+          Location
+        </h2>
+        
+        <div className="w-[92%] sm:w-[95%] md:w-full max-w-[1200px] min-w-0 h-[350px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-md border border-black-5 bg-black-5 relative">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.2527998699!2d-74.14448744576391!3d40.697631233346514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1718224536923!5m2!1sen!2s" 
+            style={{ border: 0, width: '100%', height: '100%', maxWidth: '100%' }} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Cafe Location Map"
+            className="absolute inset-0 w-full h-full max-w-full grayscale-[20%] contrast-125 opacity-90 transition-all duration-500 hover:grayscale-0 hover:opacity-100"
+          />
+        </div>
+      </section>
+
+      {/* 6. FAQ Section */}
+      <section className="bg-secondary-2 py-20 md:py-32 px-6 flex flex-col items-center w-full">
+        <h2 className="font-heading text-black-100 text-[clamp(2.5rem,5vw,4.5rem)] mb-12 md:mb-16 text-center">
+          Frequently Asked Questions
+        </h2>
+        
+        <div className="w-full max-w-[800px] flex flex-col gap-5 sm:gap-6">
+          {faqs.map((faq, index) => {
+            const isOpen = openFaq === index;
+            return (
+              <div key={index} className="flex flex-col w-full">
+                <button
+                  onClick={() => setOpenFaq(isOpen ? null : index)}
+                  className="w-full bg-primary-1 text-white-cream py-5 px-6 sm:px-10 rounded-[1.25rem] flex items-center justify-between font-heading text-lg sm:text-xl transition-colors hover:brightness-110 shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-black-100 cursor-pointer"
+                >
+                  <span className="text-left pr-4">{faq.question}</span>
+                  <div className="shrink-0 flex items-center justify-center w-8 h-8">
+                    {isOpen ? (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg>
+                    ) : (
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg>
+                    )}
+                  </div>
+                </button>
+                <div 
+                  className={`grid transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 sm:px-12 pt-4 md:pt-6 pb-2 text-black-100 text-base sm:text-lg font-light leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 7. Get in Touch Form Section */}
+      <section className="bg-primary-2 py-20 md:py-32 px-6 flex justify-center w-full">
+        <div className="w-full max-w-[1200px] flex flex-col md:flex-row gap-12 md:gap-8 justify-between">
+          <div className="w-full max-w-[600px] flex flex-col">
+            <h2 className="font-heading text-white-cream text-[clamp(3.5rem,6vw,5rem)] leading-tight tracking-wide mb-10">
+              Get in touch with us
+            </h2>
+            
+            <form className="flex flex-col gap-5 sm:gap-6 w-full relative z-10" onSubmit={(e) => e.preventDefault()}>
+              <input 
+                type="text" 
+                placeholder="Name" 
+                className="w-full bg-secondary-2 text-black-100 placeholder:text-black-75 py-4 px-6 rounded-[0.5rem] outline-none focus-visible:ring-2 focus-visible:ring-white-cream text-lg"
+              />
+              <input 
+                type="email" 
+                placeholder="Email" 
+                className="w-full bg-secondary-2 text-black-100 placeholder:text-black-75 py-4 px-6 rounded-[0.5rem] outline-none focus-visible:ring-2 focus-visible:ring-white-cream text-lg"
+              />
+              <input 
+                type="tel" 
+                placeholder="Phone No." 
+                className="w-full bg-secondary-2 text-black-100 placeholder:text-black-75 py-4 px-6 rounded-[0.5rem] outline-none focus-visible:ring-2 focus-visible:ring-white-cream text-lg"
+              />
+              
+              {/* Custom Dropdown */}
+              <div className="relative flex flex-col w-full z-20">
+                <button
+                  type="button"
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className={`w-full bg-secondary-2 text-black-100 py-4 px-6 outline-none focus-visible:ring-2 focus-visible:ring-white-cream text-lg flex items-center justify-between text-left transition-colors cursor-pointer ${
+                    isDropdownOpen ? 'rounded-t-[0.5rem]' : 'rounded-[0.5rem]'
+                  }`}
+                >
+                  <span className={selectedPurpose ? "text-black-100" : "text-black-75"}>
+                    {selectedPurpose || "Purpose"}
+                  </span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={`w-6 h-6 text-black-75 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}>
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+                
+                <div 
+                  className={`grid transition-all duration-300 ease-in-out w-full bg-secondary-2 rounded-b-[0.5rem] overflow-hidden shadow-md ${
+                    isDropdownOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                  }`}
+                >
+                  <div className="overflow-hidden flex flex-col">
+                    <div className="pb-3 flex flex-col w-full">
+                      {["Feedback", "General Enquiry", "Reservation Request"].map((option) => (
+                        <button
+                          key={option}
+                          type="button"
+                          onClick={() => {
+                            setSelectedPurpose(option);
+                            setIsDropdownOpen(false);
+                          }}
+                          className="w-full text-left px-10 py-2.5 text-black-75 hover:text-black-100 hover:bg-secondary-1 transition-colors text-lg cursor-pointer"
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <textarea 
+                placeholder="Message" 
+                rows="6"
+                className="w-full bg-secondary-2 text-black-100 placeholder:text-black-75 py-4 px-6 rounded-[0.5rem] outline-none focus-visible:ring-2 focus-visible:ring-white-cream text-lg resize-none relative z-10"
+              />
+              
+              <button 
+                type="submit" 
+                className="mt-6 self-center lg:self-start bg-secondary-1 text-black-100 font-bold text-lg py-3 px-12 rounded-[0.5rem] hover:brightness-110 transition-colors shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-white-cream cursor-pointer"
+              >
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </section>

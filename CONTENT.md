@@ -123,3 +123,17 @@
   2. `https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&q=80&w=1200`
   3. `https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&q=80&w=1200`
   4. `https://images.unsplash.com/photo-1504198458649-3128b932f49e?auto=format&fit=crop&q=80&w=1200`
+
+## Frequently Asked Questions
+* **Q**: Do I need to make a reservation?
+  * **A**: Reservations are not required but highly recommended for larger groups or during peak hours to ensure availability.
+* **Q**: What types of payment do you accept?
+  * **A**: We accept cash, all major credit cards, and mobile payments like Apple Pay and Google Pay.
+* **Q**: Do you offer vegan or gluten-free options?
+  * **A**: Yes, we have a variety of vegan and gluten-free pastries, meals, and alternative milks for our beverages.
+* **Q**: Is Wi-Fi available for customers?
+  * **A**: Yes, we offer complimentary high-speed Wi-Fi for all our guests.
+* **Q**: Do you host private events or parties?
+  * **A**: Yes, our space is available for private booking. Please contact us through the form above for more details and availability.
+* **Q**: How can I stay updated on upcoming events and promotions?
+  * **A**: Follow us on our social media channels or subscribe to our newsletter to receive the latest updates.
